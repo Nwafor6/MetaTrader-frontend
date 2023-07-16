@@ -8,7 +8,7 @@ $(document).ready(function(){
     }
     $.ajax({
         type: "get",
-        url: "https://16.171.11.210/account/",
+        url: "http://16.171.11.210/account/",
         success:function(resp){
             localStorage.removeItem("login")
             localStorage.setItem("login", JSON.stringify(resp))
