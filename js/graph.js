@@ -11,7 +11,7 @@ $(document).ready(() => {
     $(".ajaxResponse").html("");
     $.ajax({
       type: "post",
-      url: "http://16.171.11.210/account/",
+      url: "https://tradeft9ja.vercel.app/account/",
       data: {
         login: $("#login").val(),
       },

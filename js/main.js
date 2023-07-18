@@ -1,15 +1,15 @@
 $(document).ready(function(){
     console.log("Hello I am")
-    if (localStorage.getItem("login")){
-        const logins=JSON.parse(localStorage.getItem("login"));
-        logins.details.forEach((e)=>{
-            document.querySelector(".form-select").innerHTML +=`<option value="${e}">${e}</option>`
-        })
-    }
+    $(".ajaxResponse").html(`
+    <div class="alert alert-info" role="alert">
+        Fetiching live data..
+    </div>
+    `)
     $.ajax({
         type: "get",
-        url: "http://16.171.11.210/account/",
+        url: "https://tradeft9ja.vercel.app/account/",
         success:function(resp){
+            $(".ajaxResponse").html(``)
             localStorage.removeItem("login")
             localStorage.setItem("login", JSON.stringify(resp))
             console.log(resp,"Success")
